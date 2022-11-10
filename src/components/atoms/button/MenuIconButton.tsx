@@ -17,7 +17,7 @@ export const MenuIconButton: FC<Props> = memo((props) => {
     <IconButton
       aria-label="メニューボタン"
       icon={<HamburgerIcon />}
-      size="sm"
+      size="lg"
       variant="unstyled"
       display={{ base: 'block', md: 'none' }}
       onClick={onOpen}

@@ -1,5 +1,6 @@
 import { Box, Text, Center } from '@chakra-ui/react'
-export const ChannelList = () => {
+
+const ChannelList = () => {
   return (
     <>
       <Box>
@@ -20,3 +21,5 @@ export const ChannelList = () => {
     </>
   )
 }
+
+export default ChannelList
