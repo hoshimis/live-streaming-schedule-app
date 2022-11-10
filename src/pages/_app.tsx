@@ -1,6 +1,8 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import '../styles/globals.css'
+// import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import HeaderLayout from '../components/templates/HeaderLayout'
 
 // 1. Import the extendTheme function
 
@@ -18,7 +20,12 @@ const theme = extendTheme({ colors })
 function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Head>
+        <title>live schedule!!</title>
+      </Head>
+      <HeaderLayout>
+        <Component {...pageProps} />
+      </HeaderLayout>
     </ChakraProvider>
   )
 }

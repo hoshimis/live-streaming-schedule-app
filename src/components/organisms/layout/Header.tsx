@@ -6,8 +6,8 @@ import {
   Spacer,
   useDisclosure
 } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import { memo, useCallback, FC } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { MenuIconButton } from '../../atoms/button/MenuIconButton'
 import { MenuDrawer } from '../../molecules/MenuDrawer'
@@ -21,17 +21,22 @@ import { MenuDrawer } from '../../molecules/MenuDrawer'
 
 export const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const onClickHome = useCallback(() => {
-    navigate('/')
-  }, [navigate])
+    router.push('/ScheduleList')
+  }, [router])
   const onClickChannels = useCallback(() => {
-    navigate('/channels')
-  }, [navigate])
+    router.push('/ChannelList')
+  }, [router])
   const onClickSettings = useCallback(() => {
-    navigate('/settings')
-  }, [navigate])
+    router.push('/Settings')
+  }, [router])
+
+  // TODO: ログアウトの処理を実装する
+  const onClickLogout = useCallback(() => {
+    router.push('/')
+  }, [router])
 
   return (
     <>
@@ -42,7 +47,7 @@ export const Header: FC = memo(() => {
         align="center"
         justify="space-between"
         boxShadow="lg"
-        padding={{ base: 3, md: 7 }}
+        padding={{ base: 5, md: 7 }}
       >
         <Flex
           align="center"
@@ -73,7 +78,7 @@ export const Header: FC = memo(() => {
               <Link onClick={onClickSettings}>設定</Link>
             </Box>
             <Box pr={4}>
-              <Link onClick={onClickSettings}>ログアウト</Link>
+              <Link onClick={onClickLogout}>ログアウト</Link>
             </Box>
           </Flex>
         </Box>

@@ -1,5 +1,6 @@
 import { Box, Text, Center } from '@chakra-ui/react'
-export const Settings = () => {
+
+const ScheduleList = () => {
   return (
     <>
       <Box>
@@ -12,7 +13,7 @@ export const Settings = () => {
               textAlign="center"
               letterSpacing={5}
             >
-              Settings
+              ScheduleList
             </Text>
           </Center>
         </Box>
@@ -20,3 +21,5 @@ export const Settings = () => {
     </>
   )
 }
+
+export default ScheduleList

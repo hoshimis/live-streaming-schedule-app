@@ -1,7 +1,7 @@
-import { memo, ReactNode, FC } from 'react'
+import { ReactNode } from 'react'
 import { Header } from '../organisms/layout/Header'
 
-type Props = {
+type LayoutProps = {
   // childrenのような型に囲まれた要素にはReactNodeを用いる
   children: ReactNode
 }
@@ -12,12 +12,13 @@ type Props = {
  * @return 渡されたchildrenとHeaderを結合して返す。
  */
 
-export const HeaderLayout: FC<Props> = memo((props) => {
-  const { children } = props
+const HeaderLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
       {children}
     </>
   )
-})
+}
+
+export default HeaderLayout
