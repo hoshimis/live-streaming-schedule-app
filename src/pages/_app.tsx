@@ -1,5 +1,5 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-// import '../styles/globals.css'
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import HeaderLayout from '../components/templates/HeaderLayout'
@@ -23,9 +23,11 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>live schedule!!</title>
       </Head>
-      <HeaderLayout>
-        <Component {...pageProps} />
-      </HeaderLayout>
+      <Box>
+        <HeaderLayout>
+          <Component {...pageProps} />
+        </HeaderLayout>
+      </Box>
     </ChakraProvider>
   )
 }
