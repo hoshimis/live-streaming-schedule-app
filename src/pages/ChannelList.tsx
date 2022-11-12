@@ -1,25 +1,37 @@
-import { Box, Text, Center } from '@chakra-ui/react'
+import { Box, SimpleGrid } from '@chakra-ui/react'
+import { memo } from 'react'
+import ChannelCard from '../components/molecules/ChannnelCard'
 
-const ChannelList = () => {
+// TODO: 現在はpropsに固定値しか入らないので、サーバから取得してきた値を表示できる用にする。
+const ChannelList = memo(() => {
   return (
     <>
-      <Box>
-        <Box height="100vh">
-          <Center as="h1" height="100%">
-            <Text
-              as="b"
-              color={'black'}
-              fontSize={{ base: '4xl', md: '4xl' }}
-              textAlign="center"
-              letterSpacing={5}
-            >
-              ChannelList
-            </Text>
-          </Center>
-        </Box>
+      <Box w={'100vw'} p={5} bg="#EEEEF0">
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={5}>
+          <ChannelCard
+            cardImage="https://source.unsplash.com/random"
+            userImage="https://source.unsplash.com/random"
+            title="sample"
+          />
+          <ChannelCard
+            cardImage="https://source.unsplash.com/random"
+            userImage="https://source.unsplash.com/random"
+            title="sample"
+          />
+          <ChannelCard
+            cardImage="https://source.unsplash.com/random"
+            userImage="https://source.unsplash.com/random"
+            title="sample"
+          />
+          <ChannelCard
+            cardImage="https://source.unsplash.com/random"
+            userImage="https://source.unsplash.com/random"
+            title="sample"
+          />
+        </SimpleGrid>
       </Box>
     </>
   )
-}
+})
 
 export default ChannelList

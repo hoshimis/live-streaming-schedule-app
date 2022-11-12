@@ -1,18 +1,21 @@
 import { ComponentMeta } from '@storybook/react'
-import { MenuIconButton } from './MenuIconButton'
+import CardImage from './CardImage'
 
 // ファイル内のStory設定（メタデータオブジェクト）
 export default {
   // グループ名
-  title: 'Button',
+  title: 'Image',
   // 使用するコンポーネント
-  component: MenuIconButton
-} as ComponentMeta<typeof MenuIconButton>
+  component: CardImage
+} as ComponentMeta<typeof CardImage>
 
 // CSF 3.0
 // export default { component: Button };
 // export const Primary = { args: { primary: true } };
 
-export const MenuIconButton1 = (props: any) => {
-  return <MenuIconButton {...props}>1</MenuIconButton>
+export const lg = () => {
+  return <CardImage cardImage="https://source.unsplash.com/random" />
+}
+export const md = () => {
+  return <CardImage cardImage="https://source.unsplash.com/random" />
 }

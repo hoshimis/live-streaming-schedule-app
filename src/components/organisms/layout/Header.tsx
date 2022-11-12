@@ -9,7 +9,7 @@ import {
 import { useRouter } from 'next/router'
 import { memo, useCallback, FC } from 'react'
 
-import { MenuIconButton } from '../../atoms/button/MenuIconButton'
+import { MenuIconButton } from '../../atoms/Button/MenuIconButton'
 import { MenuDrawer } from '../../molecules/MenuDrawer'
 
 /**

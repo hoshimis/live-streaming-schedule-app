@@ -1,17 +1,14 @@
-import { Box } from '@chakra-ui/react'
 import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+// import styles from '../styles/Home.molecule.css'
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
         <title>live schedule!!</title>
       </Head>
-      <Box>
-        <div>hello</div>
-      </Box>
     </>
   )
 }
+
+export default Home
