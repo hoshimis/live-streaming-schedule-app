@@ -8,7 +8,7 @@ type Props = {
 /**
  * @author [hoshimi](https://github.com/hoshimis)
  */
-const CardTitleText: FC<Props> = memo((props) => {
+const CardTitle: FC<Props> = memo((props) => {
   const { children } = props
   return (
     <Box textAlign="center" w="100%" h="100%" mt={5} overflow="hidden">
@@ -29,4 +29,4 @@ const CardTitleText: FC<Props> = memo((props) => {
   )
 })
 
-export default CardTitleText
+export default CardTitle

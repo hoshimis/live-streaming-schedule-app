@@ -31,18 +31,18 @@ export const MenuDrawer: FC<Props> = memo((props) => {
     <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay>
         <DrawerContent>
-          <DrawerBody p={0} bg="gray.100">
-            <Button w="100%" onClick={onClickHome}>
+          <DrawerBody p={0}>
+            <Button w="100%" borderRadius={0} onClick={onClickHome}>
               配信スケジュール
             </Button>
-            <Button w="100%" onClick={onClickChannels}>
+            <Button w="100%" borderRadius={0} onClick={onClickChannels}>
               登録チャンネル
             </Button>
-            <Button w="100%" onClick={onClickSettings}>
+            <Button w="100%" borderRadius={0} onClick={onClickSettings}>
               設定
             </Button>
             {/* TODO: ログアウト処理を追加する  */}
-            <Button w="100%" onClick={onClickSettings}>
+            <Button w="100%" borderRadius={0} onClick={onClickSettings}>
               ログアウト
             </Button>
           </DrawerBody>

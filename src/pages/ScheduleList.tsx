@@ -8,7 +8,6 @@ const ScheduleList = () => {
           <Center as="h1" height="100%">
             <Text
               as="b"
-              color={'black'}
               fontSize={{ base: '4xl', md: '4xl' }}
               textAlign="center"
               letterSpacing={5}
