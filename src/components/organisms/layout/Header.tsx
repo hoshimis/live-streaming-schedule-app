@@ -25,18 +25,22 @@ export const Header: FC = memo(() => {
 
   const onClickHome = useCallback(() => {
     router.push('/ScheduleList')
-  }, [router])
+    onClose()
+  }, [router, onClose])
   const onClickChannels = useCallback(() => {
     router.push('/ChannelList')
-  }, [router])
+    onClose()
+  }, [router, onClose])
   const onClickSettings = useCallback(() => {
     router.push('/Settings')
-  }, [router])
+    onClose()
+  }, [router, onClose])
 
   // TODO: ログアウトの処理を実装する
   const onClickLogout = useCallback(() => {
     router.push('/')
-  }, [router])
+    onClose()
+  }, [router, onClose])
 
   return (
     <>

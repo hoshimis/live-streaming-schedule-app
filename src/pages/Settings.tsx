@@ -1,22 +1,17 @@
-import { Box, Text, Center } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import SettingTitle from '../components/atoms/Text/SettingTitle'
+import ThemeChanger from '../components/organisms/ThemeChanger'
 
 const Settings = () => {
   return (
     <>
-      <Box>
-        <Box height="100vh">
-          <Center as="h1" height="100%">
-            <Text
-              as="b"
-              color={'black'}
-              fontSize={{ base: '4xl', md: '4xl' }}
-              textAlign="center"
-              letterSpacing={5}
-            >
-              Settings
-            </Text>
-          </Center>
-        </Box>
+      <Box maxWidth="1080px" m="auto" p={{ base: 5, md: 10 }}>
+        <SettingTitle title="アカウント">
+          ここにアカウント情報が入る
+        </SettingTitle>
+        <SettingTitle title="ダークモード">
+          <ThemeChanger></ThemeChanger>
+        </SettingTitle>
       </Box>
     </>
   )

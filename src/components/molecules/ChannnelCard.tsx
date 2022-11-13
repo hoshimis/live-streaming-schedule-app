@@ -22,9 +22,9 @@ const ChannelCard: FC<Props> = memo((props) => {
       shadow="lg"
       borderWidth="1px"
       borderRadius="20px"
-      bg={'gray.50'}
+      bg={'#EEEEF0'}
       w={{ base: '100%', md: '100%' }}
-      h={{ base: '240px', md: '280px' }}
+      h={{ base: '220px', md: '260px' }}
       _hover={{ opacity: 0.8, cursor: 'pointer', transform: 'scale(1.1, 1.1)' }}
     >
       <CardImage cardImage={cardImage} />

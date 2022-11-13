@@ -6,7 +6,7 @@ import ChannelCard from '../components/molecules/ChannnelCard'
 const ChannelList = memo(() => {
   return (
     <>
-      <Box w={'100vw'} p={5} bg="#EEEEF0">
+      <Box w={'100vw'} p={5}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={5}>
           <ChannelCard
             cardImage="https://source.unsplash.com/random"
