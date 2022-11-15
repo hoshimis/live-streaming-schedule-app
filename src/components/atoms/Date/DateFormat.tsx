@@ -1,11 +1,10 @@
-import { Box } from '@chakra-ui/react'
-import { format, formatDistanceToNow, parse, subMinutes } from 'date-fns'
+import { Box, Text } from '@chakra-ui/react'
+import { format } from 'date-fns'
 import { ja } from 'date-fns/locale'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
-const DateFormat = () => {
+const DateFormat = memo(() => {
   const [now, setNow] = useState<Date>(new Date())
-  const past = parse('2022-01-01', 'yyyy-MM-dd', new Date())
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,20 +18,13 @@ const DateFormat = () => {
 
   return (
     <Box>
-      <p>
-        {format(now, 'yyyy/MM/dd(E) HH:mm:ss', {
+      <Text fontSize={{ base: 'lg', md: 'lg', lg: 'xl' }} textAlign="center">
+        {format(now, 'yyyy/MM/dd(E) HH:mm', {
           locale: ja
         })}
-      </p>
-      <p>
-        {format(past, 'yyyy/MM/dd')} は
-        {formatDistanceToNow(past, {
-          locale: ja,
-          addSuffix: true
-        })}
-      </p>
+      </Text>
     </Box>
   )
-}
+})
 
 export default DateFormat

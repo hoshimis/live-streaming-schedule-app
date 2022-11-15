@@ -1,21 +1,13 @@
-import { Box, Text, Center } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import DateFormat from '../components/atoms/Date/DateFormat'
+import DateTab from '../components/atoms/Tab/DateTab'
 
 const ScheduleList = () => {
   return (
     <>
-      <Box>
-        <Box height="100vh">
-          <Center as="h1" height="100%">
-            <Text
-              as="b"
-              fontSize={{ base: '4xl', md: '4xl' }}
-              textAlign="center"
-              letterSpacing={5}
-            >
-              ScheduleList
-            </Text>
-          </Center>
-        </Box>
+      <Box maxWidth="1200px" m="auto" p={{ base: 2, md: 5 }}>
+        <DateFormat />
+        <DateTab />
       </Box>
     </>
   )
