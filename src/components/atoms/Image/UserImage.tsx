@@ -3,6 +3,7 @@ import { memo, FC } from 'react'
 
 type Props = {
   userImage: string
+  IconSize: object
 }
 
 /**
@@ -10,15 +11,8 @@ type Props = {
  */
 
 const UserImage: FC<Props> = memo((props) => {
-  const { userImage } = props
-  return (
-    <Avatar
-      src={userImage}
-      boxSize={{ base: '70px', md: '80px', lg: '90px' }}
-      name="icon"
-      mt="10px"
-    />
-  )
+  const { userImage, IconSize } = props
+  return <Avatar src={userImage} boxSize={IconSize} name="icon" mt="10px" />
 })
 
 export default UserImage
