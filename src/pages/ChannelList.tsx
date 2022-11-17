@@ -9,9 +9,9 @@ const ChannelList = memo(() => {
       <Box w={'100vw'} p={5}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={5}>
           <ChannelCard
-            cardImage="https://source.unsplash.com/random"
-            userImage="https://source.unsplash.com/random"
-            title="sample"
+            cardImage="https://www.youtube.com/channel/UCWU3QKablvVEK6JcEyEC58w"
+            userImage="https://yt3.ggpht.com/ytc/AMLnZu81hRrvsJW5OeCpF9SzjK25lir7iEQTXQ_ofgM8=s88-c-k-c0x00ffffff-no-rj"
+            title="メガテラゼロ"
           />
           <ChannelCard
             cardImage="https://source.unsplash.com/random"
