@@ -1,24 +1,9 @@
-import { Box, Button, Divider, Heading, VStack } from '@chakra-ui/react'
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  TwitterAuthProvider
-} from 'firebase/auth'
+import { Box, Divider, Heading } from '@chakra-ui/react'
 import React from 'react'
-import { SiGoogle, SiTwitter } from 'react-icons/si'
 import LoginForm from '../components/molecules/LoginForm'
-import { auth } from '../firebase/client'
+import OAuthLoginButton from '../components/molecules/OAuthLoginButtons'
 
 const LoginPage = () => {
-  const loginWithProvider = (providerName: 'google' | 'twitter') => {
-    const provider = {
-      google: new GoogleAuthProvider(),
-      twitter: new TwitterAuthProvider()
-    }
-
-    return signInWithPopup(auth, provider[providerName])
-  }
-
   return (
     <>
       <Box
@@ -37,30 +22,7 @@ const LoginPage = () => {
         >
           ログイン
         </Heading>
-        <VStack mb={20}>
-          <Button
-            m={10}
-            leftIcon={<SiGoogle />}
-            borderRadius="999px"
-            colorScheme="pink"
-            p="5px 50px"
-            size="lg"
-            onClick={() => loginWithProvider('google')}
-          >
-            Googleでログイン
-          </Button>
-          <Button
-            m={10}
-            leftIcon={<SiTwitter />}
-            borderRadius="999px"
-            colorScheme="blue"
-            p="5px 50px"
-            size="lg"
-            onClick={() => loginWithProvider('twitter')}
-          >
-            Twitterでログイン
-          </Button>
-        </VStack>
+        <OAuthLoginButton />
         <Divider />
         <LoginForm />
       </Box>
