@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import HeaderLayout from '../components/templates/HeaderLayout'
+import { AuthProvider } from '../context/AuthContext'
 
 // 1. Import the extendTheme function
 
@@ -24,9 +25,11 @@ function App({ Component, pageProps }: AppProps) {
         <title>live schedule!!</title>
       </Head>
       <Box>
-        <HeaderLayout>
-          <Component {...pageProps} />
-        </HeaderLayout>
+        <AuthProvider>
+          <HeaderLayout>
+            <Component {...pageProps} />
+          </HeaderLayout>
+        </AuthProvider>
       </Box>
     </ChakraProvider>
   )

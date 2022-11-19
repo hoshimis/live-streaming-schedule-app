@@ -1,3 +1,4 @@
+import { CalendarIcon, SettingsIcon, TimeIcon } from '@chakra-ui/icons'
 import {
   Box,
   Flex,
@@ -36,12 +37,6 @@ export const Header: FC = memo(() => {
     onClose()
   }, [router, onClose])
 
-  // TODO: ログアウトの処理を実装する
-  const onClickLogout = useCallback(() => {
-    router.push('/')
-    onClose()
-  }, [router, onClose])
-
   return (
     <>
       <Flex
@@ -73,16 +68,22 @@ export const Header: FC = memo(() => {
             display={{ base: 'none', md: 'flex' }}
           >
             <Box pr={4}>
-              <Link onClick={onClickHome}>配信スケジュール</Link>
+              <Link onClick={onClickHome}>
+                <TimeIcon mr={2} boxSize={5} />
+                配信スケジュール
+              </Link>
             </Box>
             <Box pr={4}>
-              <Link onClick={onClickChannels}>登録チャンネル</Link>
+              <Link onClick={onClickChannels}>
+                <CalendarIcon mr={2} boxSize={5} />
+                登録チャンネル
+              </Link>
             </Box>
             <Box pr={4}>
-              <Link onClick={onClickSettings}>設定</Link>
-            </Box>
-            <Box pr={4}>
-              <Link onClick={onClickLogout}>ログアウト</Link>
+              <Link onClick={onClickSettings}>
+                <SettingsIcon mr={2} boxSize={5} />
+                設定
+              </Link>
             </Box>
           </Flex>
         </Box>
