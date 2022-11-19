@@ -1,9 +1,17 @@
 import { Box, SimpleGrid } from '@chakra-ui/react'
-import { memo } from 'react'
+import { useRouter } from 'next/router'
+import { memo, useContext, useEffect } from 'react'
 import ChannelCard from '../components/molecules/ChannnelCard'
+import { AuthContext } from '../context/AuthContext'
 
 // TODO: 現在はpropsに固定値しか入らないので、サーバから取得してきた値を表示できる用にする。
 const ChannelList = memo(() => {
+  const router = useRouter()
+  const { currentUser } = useContext(AuthContext)
+  useEffect(() => {
+    currentUser === null && router.push('/LoginPage')
+  }, [currentUser, router])
+
   return (
     <>
       <Box w={'100vw'} p={5}>

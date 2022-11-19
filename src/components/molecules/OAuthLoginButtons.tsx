@@ -1,49 +1,23 @@
-import { Button, VStack } from '@chakra-ui/react'
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  TwitterAuthProvider
-} from 'firebase/auth'
-import React from 'react'
-import { SiGoogle, SiTwitter } from 'react-icons/si'
-import { auth } from '../../firebase/client'
+import { VStack } from '@chakra-ui/react'
+import LoginButton from '../atoms/Button/LoginButton'
 
-const OAuthLoginButton = () => {
-  const loginWithProvider = (providerName: 'google' | 'twitter') => {
-    const provider = {
-      google: new GoogleAuthProvider(),
-      twitter: new TwitterAuthProvider()
-    }
-
-    return signInWithPopup(auth, provider[providerName])
-  }
-
+const OAuthLoginButtons = () => {
   return (
     <VStack mb={20}>
-      <Button
-        m={10}
-        leftIcon={<SiGoogle />}
-        borderRadius="999px"
+      <LoginButton
+        title="Googleでログイン"
+        icon="google"
         colorScheme="pink"
-        p="5px 50px"
-        size="lg"
-        onClick={() => loginWithProvider('google')}
-      >
-        Googleでログイン
-      </Button>
-      <Button
-        m={10}
-        leftIcon={<SiTwitter />}
-        borderRadius="999px"
+        providerName="google"
+      />
+      <LoginButton
+        title="Twitterでログイン"
+        icon="twitter"
         colorScheme="blue"
-        p="5px 50px"
-        size="lg"
-        onClick={() => loginWithProvider('twitter')}
-      >
-        Twitterでログイン
-      </Button>
+        providerName="twitter"
+      />
     </VStack>
   )
 }
 
-export default OAuthLoginButton
+export default OAuthLoginButtons
